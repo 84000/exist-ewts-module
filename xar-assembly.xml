@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://expath.org/ns/pkg" name="${package-name}" abbrev="${package-abbrev}" version="${project.version}"
+    spec="1.0">
+    <title>${package-title}</title>
+    <description>${project.description}</description>
+    <author id="evolved-binary">Evolved Binary</author>
+    <website>${project.url}</website>
+    <license>Apache License, Version 2.0</license>
+    <copyright>true</copyright>
+
+    <type>library</type>
+
+    <status>stable</status>
+
+    <tag>${project.artifactId}</tag>
+    <tag>library</tag>
+    <tag>unicode</tag>
+    <tag>wylie</tag>
+    <tag>buddhist</tag>
+    <category id="libraries">Libraries</category>
+
+    <dependency processor="http://exist-db.org" semver-min="${exist.version}" />
+
+    <!-- Collection inside /db/apps where xar-resources will be copied to -->
+    <target>${package-abbrev}</target>
+
+    <!-- includes everything in src/main/xar-resources, README.md, and LICENSE -->
+    <fileSets>
+        <fileSet>
+            <directory>${basedir}</directory>
+            <includes>
+                <include>README.md</include>
+                <include>LICENSE</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${basedir}/src/main/xar-resources</directory>
+        </fileSet>
+    </fileSets>
+
+    <!-- include the XQuery Library Module written in Java (JAR output) from this project -->
+    <dependencySets>
+        <dependencySet>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${project.artifactId}</artifactId>
+            <version>${project.version}</version>
+        </dependencySet>
+
+        <!-- we have to list all dependent libs too for the Kuberam plugin to function properly-->
+        <dependencySet>
+            <groupId>io.bdrc.ewtsconverter</groupId>
+            <artifactId>ewts-converter</artifactId>
+            <version>${etws.converter.version}</version>
+        </dependencySet>
+    </dependencySets>
+
+    <!-- register the Java module with eXist-db -->
+    <components>
+        <resource>
+            <public-uri>${ewts.module.namespace}</public-uri>
+            <file>urn:java:class:org.tbrc.xquery.extensions.${ewts.module.java.classname}</file>
+        </resource>
+    </components>
+
+</package>
