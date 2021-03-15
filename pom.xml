@@ -17,14 +17,21 @@
 
     <name>EwtsToUniModule</name>
     <description>An EWTS (Extended Wylie transliteration) library for eXist-db compatible systems</description>
-    <url>https://github.com/evolvedbinary/exist-ewts-module</url>
+    <url>https://github.com/84000/exist-ewts-module</url>
 
     <inceptionYear>2021</inceptionYear>
 
     <organization>
-        <name>Evolved Binary</name>
-        <url>https://www.evolvedbinary.com</url>
+        <name>84000: Translating the Words of the Buddha</name>
+        <url>https://github.com/84000</url>
     </organization>
+
+    <developers>
+        <developer>
+            <organization>Evolved Binary</organization>
+            <url>https://www.evolvedbinary.com</url>
+        </developer>
+    </developers>
 
     <licenses>
         <license>
@@ -35,14 +42,14 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/evolvedbinary/exist-ewts-module.git</url>
-        <connection>scm:git:https://github.com/evolvedbinary/exist-ewts-module.git</connection>
-        <developerConnection>scm:git:https://github.com/evolvedbinary/exist-ewts-module.git</developerConnection>
+        <url>https://github.com/84000/exist-ewts-module.git</url>
+        <connection>scm:git:https://github.com/84000/exist-ewts-module.git</connection>
+        <developerConnection>scm:git:https://github.com/84000/exist-ewts-module.git</developerConnection>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/evolvedbinary/exist-ewts-module/issues</url>
+        <url>https://github.com/84000/exist-ewts-module/issues</url>
     </issueManagement>
 
     <properties>
